@@ -1,0 +1,133 @@
+/* CSS exemple */
+
+@font-face{
+    font-family: titillium;
+    src:url(../font/Titillium.ttf)
+}
+
+
+@font-face {
+    font-family: oswald;
+    src: url(../font/Oswald.ttf);
+}
+
+*{
+    font-family: titillium;
+}
+
+body{
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    background: url(https://w.forfun.com/fetch/d6/d64dc5c3b5724b5a83f900874fdab44e.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    background-attachment: fixed;
+}
+
+form{
+    padding: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+input[type="text"]{
+    width: 400px;
+    padding: 10px;
+    font-size: 16pt;
+    border: none;
+    outline:none;
+}
+input[type="submit"]{
+    width: 200px;
+    padding: 10px;
+    font-size: 16pt;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #fa2;
+    &:hover{
+        background-color: #fca;
+    }
+}
+
+a{
+    color: #fa2;
+}
+
+#resultats{
+    width: 620px;
+    font-size: 14pt;
+    margin: 20px auto;
+    color: #fff;
+    text-align: left;
+    ol{
+        padding-left: 16px;
+        list-style-position: outside;
+    }
+    li{
+        margin: 14px 0;
+        text-align: justify;
+    }
+
+    #nbr{
+        color: #fa2;
+        font-family: oswald;
+        font-size: 16pt;
+        border-bottom: 1px solid #888;
+        padding: 10px 0;
+    }
+}
+
+
+
+/*
+
+CSS PERSO
+
+
+ #formSearch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(44, 44, 38, 0.8);
+    height: 75px;
+    box-sizing: border-box;
+    margin: 0;
+    input{
+        margin: 0 1rem;
+
+    }
+    .textSearch{
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 0 1rem;
+        height: 30px;
+        width: 200px;
+    }
+    .btnSubmit{
+        height: 30px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 5px;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+
+#result{
+    display: bock;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+} */
+
+
