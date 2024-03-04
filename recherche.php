@@ -1,6 +1,6 @@
 <?php
 
-include 'header/header.php';
+include 'template/header.php';
 
 if (@$afficher == "oui") { ?>
 
@@ -17,6 +17,6 @@ if (@$afficher == "oui") { ?>
 
 <?php }
 
-include 'footer/footer.php';
+include 'template/footer.php';
 
 ?>

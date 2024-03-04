@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
 
 
 
-include 'header/header.php'
+include 'template/header.php'
 ?>
 
 
@@ -33,4 +33,4 @@ $data['cook_time']  ?> Mn</p>
     <a href="index.php">retour</a>
 </main>
 
-<?php include 'footer/footer.php' ?>
+<?php include 'template/footer.php' ?>

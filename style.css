@@ -1,14 +1,41 @@
+@font-face{
+    font-family: titillium;
+    src:url(../font/Titillium.ttf)
+}
+
+
+@font-face {
+    font-family: oswald;
+    src: url(../font/Oswald.ttf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
+    color: black;
 }
 
 html {
+    font-family: titillium;
     font-size: 62.5%;
+    margin: 0 4rem;
 }
 
 body {
     font-size: 1.6rem;
 }
 
+header{
+    .logoTitle{
+        img{
+            color: black;
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .hiddenConnect{
+        display: none;
+    }
+    border-bottom: 2px solid black;
+}

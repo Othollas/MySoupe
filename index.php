@@ -3,7 +3,7 @@ $dns = 'mysql:host=localhost;dbname=mysoupe';
 $bd = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 $query = $bd->query('SELECT * FROM soup');
 $soupes = $query->fetchAll(PDO::FETCH_ASSOC);
-include 'header/header.php';
+include 'template/header.php';
 // var_dump($soupes);
 /*foreach($soupes as $soupe){ ?>
    <p><a href='soupe.php?id=<?= $soupe['id'] ?>'><?= $soupe['name'] ?> </a><p><?php }; */
@@ -49,4 +49,4 @@ include 'header/header.php';
    </div>
 </section>
 
-<?php include 'footer/footer.php' ?>
+<?php include 'template/footer.php' ?>
