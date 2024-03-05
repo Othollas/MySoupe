@@ -31,17 +31,19 @@ if (isset($valider) && !empty(trim($keywords))) {
 <body>
     <header>
         <section id="titleConnect">
-            <div class="logoTitle">
+        <div class="logoTitle">
             <img src="./src/logo_soup.png" alt="">
             <h1><a href="index.php">MySoupe</a></h1>
-            <a href="" class="connect">Connexion</a>
+        </div>
+        <div class="connect">
+            <a href="">Connexion</a>
         </div>
 
             <!-- ici mettre un javascript pour afficher la connexion une fois cliquer -->
 
             <form action="./" method="POST" class="hiddenConnect">
-                <input type="email" name="" id="" placeholder="email">
-                <input type="password" name="" id="" placeholder="mot de passe">
+                <input type="email" name="email" id="" placeholder="email">
+                <input type="password" name="email" id="" placeholder="mot de passe">
                 <input type="submit" value="envoyer">
             </form>
         </section>
@@ -49,13 +51,14 @@ if (isset($valider) && !empty(trim($keywords))) {
         <section id="search">
             <form id="formSearch" name="fo" method="get" action="../MySoupe/recherche.php">
                 <input class="textSearch" type="text" name="keywords" placeholder="Mots-clés" />
-                <input class="btnSubmit" type="submit" name="valider" value="Rechercher" />
+                <input class="btnSubmit" type="submit" name="valider" value="Recherche" />
             </form>
 
             <ul>
                 <li><a href="add_soupe.php">Ajouter une recette </a></li>
-                <li><a href="ingredient.php">Ingredient</a></li>
+                <li><a href="ingredient.php">Ingredients</a></li>
                 <li><a href="">Contact</a></li>
+                <li><a href="">News</a></li>
             </ul>
         </section>
     </header>
