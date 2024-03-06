@@ -58,7 +58,7 @@ if (isset($valider) && !empty(trim($keywords))) {
                 <li><a href="add_soupe.php">Ajouter une recette </a></li>
                 <li><a href="ingredient.php">Ingredients</a></li>
                 <li><a href="">Contact</a></li>
-                <li><a href="">News</a></li>
+                <li><a href="">news</a></li>
             </ul>
         </section>
     </header>

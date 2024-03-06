@@ -23,6 +23,7 @@ html {
     font-size: 62.5%;
     background-color: #f0f0f0;
     margin: 0;
+
     @media (min-width: 600px) {
         margin: 0 2rem;
     }
@@ -160,7 +161,7 @@ header {
                     border-bottom: 2px solid black;
                     border-top: 2px solid black;
                     font-weight: 800;
-
+                    overflow: hidden;
                 }
             }
         }
@@ -173,6 +174,10 @@ header {
     }
 
     border-bottom: 2px solid black;
+
+    @media (min-width: 600px) {
+        height: 190px;
+    }
 }
 
 
@@ -217,19 +222,26 @@ header {
     }
 }
 
+
+
 #recette {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     .recettesSaisons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         h2 {
-            margin: unset;
+
             border-bottom: 1px solid black;
         }
 
         a {
-            display: block;
-            text-align: center;
-            margin: 2em auto;
             background-color: #fa2;
-            width: 50%;
+            margin: 40px 50px;
             padding: 1rem;
             border-radius: 50px;
             letter-spacing: 1px;
@@ -244,7 +256,10 @@ header {
     }
 
     .randomRecette {
-        a {
+        display: flex;
+
+        .positionImg {
+            position: relative;
             border: 2px solid #fa2;
             border-radius: 10px;
             overflow: hidden;
@@ -252,54 +267,96 @@ header {
             height: 250px;
             margin: 0 1rem;
 
-            &:hover {
-                border: 5px solid #fa2;
+            a {
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
-            img {
-                width: 100%;
-                height: 100%;
+            p {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 50px;
+                background-color: rgba(3, 3, 3, 0.797);
+                color: #fa2;
+                text-align: center;
+                font-family: titillium;
+                padding: 0rem 0.5em;
+                visibility: hidden;
+            }
 
-                &:hover {
+            &:hover {
+                img {
                     transform: scale(1.2);
                     transition-duration: 1s;
+                }
+
+                p {
+                    visibility: visible;
                 }
             }
         }
 
-        @media (min-width: 600px) {
-            justify-content: space-around;
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    @media (min-width: 600px) {
-        justify-content: space-around;
-        display: flex;
-        align-items: center;
     }
 }
 
-
-
-
 #imgTop4 {
-    img {
-        display: block;
-        margin: 1rem auto;
-        width: 250px;
-        height: 300px;
-        border: 3px solid #fa2;
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+
+    .positionImg {
+        position: relative;
+        border: 2px solid #fa2;
         border-radius: 10px;
+        overflow: hidden;
+        width: 200px;
+        height: 250px;
+        margin: 1rem 1rem;
+
+        a {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background-color: rgba(3, 3, 3, 0.797);
+            color: #fa2;
+            text-align: center;
+            font-family: titillium;
+            padding: 0rem 0.5em;
+            visibility: hidden;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+                transition-duration: 1s;
+            }
+
+            p {
+                visibility: visible;
+
+
+            }
+
+            transition-duration: 1s;
+        }
     }
 
-    @media (min-width: 600px) {
-        justify-content: space-around;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
 }
 
 /* Style du footer */
@@ -356,9 +413,123 @@ footer {
             letter-spacing: 1px;
             margin: 0.5rem 1.5rem;
             color: white;
+
+            &:hover {
+                color: #fa2;
+            }
+        }
+    }
+}
+
+/*********************************************/
+
+/* Feuille css de la page soupe.php */
+
+#soupe {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    #soupePresentation {
+        width: 400px;
+        margin: 0 auto;
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 400px;
+            height: 500px;
+            
+        }
+
+        .data {
+            display: flex;
+            justify-content: space-between;
+            img{
+                margin:0 5px;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
+    #prepare_ingredient {
+        min-width: 300px;
+        width: 600px;
+        margin: 1rem auto;
+
+        .preparation {
+            margin-top: 100px;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            text-align: center;
+            img{
+                width: 15px;
+                height: 15px;
+                margin: 0 5px;
+            }
+        }
+
+        .ingredient {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+#introuvable{
+    background: url(./src/platVide.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 800px;
+    height: 400px;
+    color: #fa2;
+    padding: 10rem 2rem;  
+    margin: 5rem auto;
+    text-align: center;
+    h1{text-shadow: 1px 1px 1px black;
+        letter-spacing: 5px;
+        font-size: 5rem;
+        border: none;
+    }
+}
+
+/*********************************/
+
+/* stylisation de la page de recherche */
+
+#resultats{
+    width: 620px;
+    font-size: 14pt;
+    margin: 20px auto;
+    color: #fff;
+    text-align: left;
+    ol{
+        padding-left: 16px;
+        list-style-position: outside;
+    }
+    li{
+        letter-spacing: 1px;
+        font-family: oswald;
+        color: #fa2;
+        margin: 14px 0;
+        text-align: justify;
+        a{
             &:hover{
                 color: #fa2;
             }
         }
+    }
+
+    #nbr{
+        color: #fa2;
+        font-family: oswald;
+        font-size: 16pt;
+        border-bottom: 1px solid #888;
+        padding: 10px 0;
     }
 }

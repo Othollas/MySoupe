@@ -63,7 +63,7 @@ if (!empty($_POST)) {
     }
 }
 
-include "header/header.php";
+include "template/header.php";
 ?>
 
 <h1>Ajouter une soupe</h1>
@@ -121,5 +121,5 @@ include "header/header.php";
 </form>
 
 <?php
-include "footer/footer.php";
+include "template/footer.php";
 ?>

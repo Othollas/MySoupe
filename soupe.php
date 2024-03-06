@@ -18,19 +18,70 @@ if (isset($_GET['id'])) {
 
 
 
-include 'template/header.php'
+include 'template/header.php';
+
+
+if($find == true){ ?>
+<div id="soupe">
+
+<div id="soupePresentation">
+    <h1><?= $data['name'] ?></h1>
+
+    <img src="./img/recipes/<?= $data["picture"] ?>" alt="">
+
+
+    <div class="data">
+        <p><img src="./src/globe.png" alt=""><?= $data['continent'] ?></p>
+        <p><img src="./src/difficulty.png" alt=""><?= $data['difficulty'] ?></p>
+        <p><img src="./src/seasons.png" alt=""><?= $data['season'] ?></p>
+    </div>
+</div>
+
+
+<div id="prepare_ingredient">
+
+    <div class="preparation">
+        
+        <p>
+         <img src="./src/sablier.png" alt=""><?= $data['prepare_time'] +
+                $data['cook_time'] . " Mn : "  ?>   <img src="./src/ingredient.png" alt=""> <?= $data['prepare_time'] . " + " ?> <img src="./src/cuisson.png" alt=""> <?= $data['cook_time'] ?> 
+        </p>
+    </div>
+
+    <div class="ingredient">
+        <h2>Ingredient</h2>
+        <div>
+            <ul>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+                <li>ingredient</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+</div>
+    <?php } else { ?>
+    <div id="introuvable">
+        <h1>Soupe introuvable</h1>
+    </div>
+    <?php }
+
+
 ?>
 
 
-    <h1><?= $data['name'] ?></h1>
-    
-    <p><?= $data['continent'] ?></p>
-    <p><?= $data['season'] ?></p>
-    <p><?= $data['difficulty'] ?></p>
-    <p><?= $data['prepare_time'] . " + " . $data['cook_time'] . ' = ' . $data['prepare_time'] +
-$data['cook_time']  ?> Mn</p>
-    <img src="./img/recipes/<?= $data["picture"] ?>" alt="">
-    <a href="index.php">retour</a>
-</main>
+<a href="index.php">retour</a>
+
+
 
 <?php include 'template/footer.php' ?>
