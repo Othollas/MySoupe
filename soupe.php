@@ -20,12 +20,12 @@ if (isset($_GET['id'])) {
 
 include 'template/header.php';
 
-
 if($find == true){ ?>
+<h1 style="font-size:40px; text-align:center; margin:50px 0"><?= $data['name'] ?></h1>
 <div id="soupe">
 
 <div id="soupePresentation">
-    <h1><?= $data['name'] ?></h1>
+    
 
     <img src="./img/recipes/<?= $data["picture"] ?>" alt="">
 

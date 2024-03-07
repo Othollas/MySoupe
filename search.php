@@ -3,6 +3,7 @@
 <?php
     @$keywords=$_GET["keywords"];
     @$valider=$_GET["valider"];
+    // recuperation des mots clés et bouclepour rechercher multimots
     if(isset($valider) && !empty(trim($keywords))){
         $words=explode(" ", trim($keywords));
         
@@ -10,12 +11,16 @@
             $kw[$i]="name like '%" .$words[$i]. "%'";
          }
         include("connexion.php");
+        // recuperer les recherches
         $res=$pdo->prepare("select name,id from soup where ".implode(" and ", $kw ));
+        var_dump($res);
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
         $tab=$res->fetchAll();
         $afficher="oui";
     }
+
+    var_dump($tab);
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +38,10 @@
         <input class="btnSubmit" type="submit" name="valider" value="Rechercher" />
     </form>
 
-    <?php if (@$afficher == "oui") { ?>
-
+    <?php if (@$afficher == "oui") { 
+        echo $afficher;
+        ?>
+        
 <div id="resultats">
     <div id="nbr"><?= count($tab) . " " . (count($tab) > 1 ? "résultats trouvés" : "résultat trouvé") . " pour " . "\"$keywords\"" ?></div>
     <ul>

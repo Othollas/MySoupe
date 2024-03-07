@@ -91,15 +91,15 @@ function imgRand()
          <p><?= $top4_img1["name"] ?></p>
       </div>
       <div class="positionImg">
-         <a href=""><img src="./img/recipes/<?= $top4_img2["picture"] ?>" alt=""></a>
+         <a href="soupe.php?id=<?= $top4_img2['id'] ?>"><img src="./img/recipes/<?= $top4_img2["picture"] ?>" alt=""></a>
          <p><?= $top4_img2["name"] ?></p>
       </div>
       <div class="positionImg">
-         <a href=""><img src="./img/recipes/<?= $top4_img3["picture"] ?>" alt=""></a>
+         <a href="soupe.php?id=<?= $top4_img3['id'] ?>"><img src="./img/recipes/<?= $top4_img3["picture"] ?>" alt=""></a>
          <p><?= $top4_img3["name"] ?></p>
       </div>
       <div class="positionImg">
-         <a href=""><img src="./img/recipes/<?= $top4_img4["picture"] ?>" alt=""></a>
+         <a href="soupe.php?id=<?= $top4_img4['id'] ?>"><img src="./img/recipes/<?= $top4_img4["picture"] ?>" alt=""></a>
          <p><?= $top4_img4["name"] ?></p>
       </div>
    </div>

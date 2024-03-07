@@ -14,6 +14,7 @@ $nbr_elements_par_page = 5;
 $nbr_de_page = ceil($tcount[0]["cpt"] / $nbr_elements_par_page);
 $debut=($page-1)*$nbr_elements_par_page;
 
+
 // Réuperer les enregistrements eux-mêmes
 $sel = $pdo->prepare("select name,id from soup order by name limit $debut,$nbr_elements_par_page ");
 $sel->setFetchMode(PDO::FETCH_ASSOC);
@@ -42,6 +43,7 @@ if(count($tab)==0)
         for ($i = 1; $i <= $nbr_de_page; $i++) { 
             if($page!=$i){
                 echo  "<a href='?page=$i'>$i</a>";
+                
             }else{
                 echo "<a style=background-color:orange;color:white>$i</a>";
             }
@@ -59,6 +61,7 @@ if(count($tab)==0)
                 <?= $tab[$i]["name"] ?>
             </a>
         <?php }
+        var_dump($tcount[0]["cpt"]);
         ?>
 
 
