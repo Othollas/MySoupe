@@ -15,7 +15,6 @@
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
-    background-color: green;
 }
 
 html {
@@ -58,9 +57,11 @@ header {
     padding-top: 20px;
     text-align: center;
     margin-bottom: 2rem;
-@media (max-width:600px) {
-    height: 100%;
-}
+
+    @media (max-width:600px) {
+        height: 100%;
+    }
+
     #titleConnect {
         .logoTitle {
             img {
@@ -117,7 +118,7 @@ header {
     }
 
     #search {
-        
+
         form {
             input[type="text"] {
                 padding-left: 20px;
@@ -155,9 +156,11 @@ header {
                 font-size: 16pt;
                 padding: 0 1rem;
                 list-style: none;
+
                 @media (max-width: 600px) {
                     display: none;
                 }
+
                 &:hover {
                     border-bottom: 2px solid black;
                     border-top: 2px solid black;
@@ -540,18 +543,19 @@ footer {
     }
 }
 
-#pagination{
+#pagination {
     margin: 5rem 0;
     text-align: center;
-    a{
+
+    a {
         border: 1px solid #fa2;
         padding: 1rem 1.5rem;
         margin: 0.5rem;
 
-}
+    }
 }
 
-#noPage{
+#noPage {
     background-image: url(./src/soupeRenverser.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -561,7 +565,8 @@ footer {
     margin: 0 50px 50px 50px;
     border-radius: 20vw;
     border: 10px solid #fa2;
-    .border{
+
+    .border {
         margin: 0 auto;
         padding: 2rem;
         background-color: #00000060;
@@ -569,12 +574,105 @@ footer {
         height: fit-content;
         border: 2px solid black;
         border-radius: 50px;
-        h1{
-            border:none;
+
+        h1 {
+            border: none;
             color: #fa2;
         }
     }
-    
-    
 }
 
+
+/***********************************************************/
+
+/* feuille de style de la page de connexion */
+
+#form_connect {
+    margin: 20rem 20rem;
+    padding: 6rem 4rem ;
+    background-color: white;
+    border-radius: 10px;
+    #gafam {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+        }
+
+        #google {
+            background-color: rgb(20, 120, 190);
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            margin: 20px 0;
+            &:hover{
+                background-color: rgb(50, 150, 220);
+            }
+            a {
+                color: white;
+            }
+        }
+
+        #facebook {
+            margin: 20px 0;
+            background-color: rgb(20, 20, 100);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            &:hover{
+                background-color: rgb(60, 60, 140);
+            }
+            a {
+                color: white;
+            }
+        }
+    }
+
+    #formConnect {
+
+        .label_input {
+            display: block;
+          
+            margin-bottom: 20px;
+
+            label {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                
+                margin: auto;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    .button{
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        input{
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(5, 60, 5);
+            border-radius: 5px;
+            color: white;
+            &:hover{
+                background-color: rgb(40, 100, 40);
+            }
+        }
+        
+    }
+}

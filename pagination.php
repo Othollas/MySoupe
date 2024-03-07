@@ -1,5 +1,5 @@
 <?php
-include("connexion.php");
+include("connexionBDD.php");
 
 // recuperer le nombre d'enregistrements
 $count = $pdo->prepare("select count(id) as cpt from soup");

@@ -1,5 +1,5 @@
 <?php
-include("./connexion.php");
+include("./connexionBDD.php");
 
 $tab = array(null);
     $nbr_de_page=0;
@@ -14,7 +14,7 @@ if (isset($valider) && !empty(trim($keywords))) {
     }
 
     // appel au resultat de la rescherche pour recuperer les nombres de page des resultats afin de definir la pagination
-    include("./connexion.php");
+    include("./connexionBDD.php");
     $res = $pdo->prepare("select id from soup where " . implode(" and ", $kw));
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute();
@@ -55,7 +55,7 @@ if (isset($valider) && !empty(trim($keywords))) {
                 <h1><a href="index.php">MySoupe</a></h1>
             </div>
             <div class="connect">
-                <a href="">Connexion</a>
+                <a href="./connexion.php">Connexion</a>
             </div>
 
             <!-- ici mettre un javascript pour afficher la connexion une fois cliquer -->
