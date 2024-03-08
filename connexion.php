@@ -22,16 +22,27 @@
                     <label for="password">mot de passe</label><input type="password" id="password">
                 </div>
                 <div id="cookie">
-                    <input type="checkbox" name="remember" id="remember">
-                    <label for="remember">Se souvenir de moi</label>
+                    <div>
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+
+                    <div>
+                        <a href="">mot de passe oublié ? </a>
+                    </div>
+
                 </div>
                 <div class="button">
                     <input type="submit" value="Connexion">
-                    <input type="submit" value="Inscription">
                 </div>
             </div>
         </div>
     </form>
+    <h2>OU</h2>
+    <div class="inscription">
+        <a href="./inscription.php">Créer un compte</a>
+    </div>
+
 </div>
 
 

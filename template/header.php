@@ -51,7 +51,7 @@ if (isset($valider) && !empty(trim($keywords))) {
     <header>
         <section id="titleConnect">
             <div class="logoTitle">
-                <img src="./src/logo_soup.png" alt="">
+                <a href=""><img src="./src/logo_soup.png" alt=""></a>
                 <h1><a href="index.php">MySoupe</a></h1>
             </div>
             <div class="connect">
