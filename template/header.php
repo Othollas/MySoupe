@@ -35,6 +35,7 @@ if (isset($valider) && !empty(trim($keywords))) {
     $res2->setFetchMode(PDO::FETCH_ASSOC);
     $res2->execute();
     $tab2 = $res2->fetchAll();
+
 }?>
 
 <!DOCTYPE html>

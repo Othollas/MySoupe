@@ -24,8 +24,6 @@ function imgRand()
 }
 
 
-// echo $random;
-
 ?>
 
 
@@ -45,7 +43,7 @@ function imgRand()
 <section id="recette">
    <div class="recettesSaisons">
       <h2>Les recettes du moment</h2>
-      <a href="">Voir les recettes</a>
+      <a href="./recettes.php">Voir les recettes</a>
    </div>
    <div class="randomRecette">
       <?php 
@@ -74,7 +72,7 @@ function imgRand()
          </div>
 </section>
 
-<section style="margin:50px;" id="top4">
+<section id="top4">
 <?php 
       $top4_img1 = imgRand(); 
       $top4_img2 = imgRand();
