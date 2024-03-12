@@ -1,4 +1,5 @@
 <?php
+
 include("./connexionBDD.php");
 
 $tab = array(null);
@@ -55,9 +56,17 @@ if (isset($valider) && !empty(trim($keywords))) {
                 <a href=""><img src="./src/logo_soup.png" alt=""></a>
                 <h1><a href="index.php">MySoupe</a></h1>
             </div>
-            <div class="connect">
+            
+            <?php if(isset($_SESSION)){?>
+                <div class="existUser">
+                    <p>Bienvenue : <b><?=  $_SESSION["existUser"]["prenom"] . " " .  $_SESSION["existUser"]["nom"] ?></b> <a class="connect" href="<?php session_destroy() ?>">deconnexion</a></p>
+                </div>
+                <?php }else{?>
+                <div class="connect">
                 <a href="./connexion.php">Connexion</a>
             </div>
+            <?php } ?>
+            
 
             <!-- ici mettre un javascript pour afficher la connexion une fois cliquer -->
 
@@ -75,7 +84,10 @@ if (isset($valider) && !empty(trim($keywords))) {
             </form>
 
             <ul>
-                <li><a href="add_soupe.php">Ajouter une recette </a></li>
+               <?php if(isset($_SESSION)){?>
+                    <li><a href="add_soupe.php">Ajouter une recette </a></li>
+                <?php } ?>
+                
                 <li><a href="ingredient.php">Ingredients</a></li>
                 <li><a href="">Contact</a></li>
                 <li><a href="">news</a></li>

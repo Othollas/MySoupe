@@ -3,6 +3,7 @@ $dns = 'mysql:host=localhost;dbname=mysoupe';
 $bd = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 $query = $bd->query('SELECT * FROM soup');
 $soupes = $query->fetchAll(PDO::FETCH_ASSOC);
+
 include 'template/header.php';
 
 /*foreach($soupes as $soupe){ ?>
