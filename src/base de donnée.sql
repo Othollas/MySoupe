@@ -206,12 +206,214 @@ insert into ingredient (name, description, picture) values
 
 -- crée la table compositions afin de crée les etapes de la recette.
 
+CREATE TABLE soup_etape (
+id_soup int  NOT NULL,
+FOREIGN KEY (id_soup) REFERENCES soup(id),
+n_etape int NOT NULL,
+etape text NOT NULL
+);
+
+insert into soup_etape(id_soup, n_etape, etape)values
+(1, 1, "Hacher finement fenouil, oignon, aneth puis couper en petits cubes saumon."),
+(1, 2, "Chauffez le bouillon dans une casserole."),
+(1, 3, "Faites revenir le fenouil, l’oignon et l’aneth avec l’huile 1 minute dans une casserole à feu vif."),
+(1, 4, "Faites revenir le fenouil, l’oignon et l’aneth avec l’huile 1 minute dans une casserole à feu vif."),
+(1, 5, "Ajoutez les tomates concassées et poursuivez la cuisson 2 minutes."),
+(1, 6, "Mixez rapidement au robot plongeant."),
+(1, 7, "Ajoutez le saumon et poursuivez la cuisson 4 minutes."),
+(1, 8, "Servez en parsemant de quelques feuilles d’aneth."),
+(2, 1, "Retirez les feuilles externes des tiges de citronnelle et coupez-les en tronçons."),
+(2, 2, "Pelez et râpez le gingembre. Épluchez, dégermez etémincez l’ail. Épépinez et hachez le piment."),
+(2, 3, "Faites cuire le riz en suivant les indications sur le paquet."),
+(2, 4, "Faites chauffer la moitié de l’huile de coco dans une cocotte puis ajoutez la citronnelle, le gingembre, l’ail, le piment et 1 pincée de sel.
+Laissez mijoter 3 minutes."),
+(2, 5, "Ajoutez le lait de coco, le bouillon et la sauce de poisson, portez à ébullition, puis laissez mijoter sur feu doux une quinzaine de minutes. Mixez."),
+(2, 6, "Filtrez le bouillon à l’aide d’une passoire fine en pressant les ingrédients pour recueillir le maximum de saveurs. Assaisonnez."),
+(2, 7, "Faites chauffer l’huile de coco restante dans une poêle. Salez et poivrez les noix de Saint-Jacques et faites cuire 2 minutes de chaque côté."),
+(2, 8, "Servez le bouillon sur un peu de riz, garnissez de coquilles Saint-Jacques, de quelques cacahuètes grillées et de graines germées.
+Donnez un tour de moulin à poivre."),
+(3, 1, "Détaillez les filets de haddock en gros morceaux. Mettez-les dans une sauteuse et recouvrez d’eau. Faites chauffer 15 minutes sans dépasser le seuil de l’ébullition. Retirez le haddock de l’eau sans la jeter."),
+(3, 2, "Épluchez les pommes de terre et taillez-les en gros cubes. Rincez et coupez le poireau en rondelles. Épluchez l’oignon et émincez-le."),
+(3, 3, "Dans une cocotte ou un faitout, faites suer dans l’huile les rondelles de poireau et l’oignon émincé. Ajoutez les pommes de terre, 75 cl d’eau de cuisson du haddock avec le laurier et le lait, et portez à ébullition. Faites cuire à frémissement pendant 20 minutes : les pommes de terre doivent être très tendres. Pendant ce temps, ôtez la peau et les arêtes du haddock et effeuillez-le."),
+(3, 4, "Une fois que la cuisson de la soupe est terminée, retirez le laurier et réservez 4 belles cuillerées de légumes."),
+(3, 5, "Ajoutez un tiers du haddock dans la soupe puis, à l’aide d’un mixeur plongeant, broyez-la plus ou moins grossièrement en fonction de votre goût. Au besoin, ajoutez un peu d’eau de cuisson. Goûtez et rectifiez l’assaisonnement."),
+(3, 6, "Servez la soupe dans des assiettes creuses, répartissez un peu de légumes, du haddock effeuillé et arrosez de 1 trait de crème."),
+(4, 1, "Préparez les palourdes. Faites-les dégorger dans de l’eau pendantau moins 1 heure (jusqu’à 12 heures)."),
+(4, 2, "Dans une casserole, faites chauffer le vin blanc avec le persil et le jus du citron. À frémissement, ajoutez les palourdes et faites cuire jusqu’à ce qu’elles s’ouvrent (jetez celles qui restent fermées !). Filtrez en conservant le jus de cuisson."),
+(4, 3, "Pendant la cuisson des palourdes, retirez la partie dure de la base des asperges et coupez le reste en rondelles en conservant les pointes entières."),
+(4, 4, "Coupez la citronnelle en tronçons de 3 cm. Rincez la branche de céleri et coupez-la en fines rondelles. Épluchez et ciselez l’oignon. Épluchez, dégermez et émincez les gousses d’ail."),
+(4, 5, "Dans une casserole, faites suer l’ail et l’oignon dans 1 cuillerée à soupe d’huile, puis ajoutez la partie dure des asperges, la citronnelle, le laurier, le thym et 1,1 litre d’eau. Portez à ébullition et faites cuire 15 minutes à petit frémissement. Filtrez."),
+(4, 6, "Dans une cocotte, chauffez l’huile restante et faites-y revenir 2 minutes les rondelles et pointes d’asperges. Ajoutez le bouillon filtré précédemment et le jus de cuisson des palourdes et portez de nouveau à ébullition."),
+(4, 7, "Hors du feu, ajoutez les palourdes. Servez aussitôt parsemé de ciboulette ciselée."),
+(5, 1, "Faites revenir à feu moyen dans une sauteuse l’oignon émincé, l’ail hachée, le poivron coupé en cubes et le chorizo avec l’huile d’olive pendant 5 minutes environ en remuant régulièrement."),
+(5, 2, "Ajoutez le riz, les petits pois, les tomates coupée en cubes, le safran et le court-bouillon et laissez cuire 15 minutes à feu moyen."),
+(5, 3, "Incorporez le poisson et les fruits de mer, salez et poivrez et prolongez la cuisson de 5 minutes."),
+(5, 4, "Répartissez dans des bols ou des assiettes creuses, parsemez de persil et servez avec les quartiers de citron."),
+(6, 1, "Pelez et hachez finement l’oignon et le gingembre. Pelez, dégermez et hachez finement l’ail. Coupez la citronnelle en tronçons de 3 cm."),
+(6, 2, "Dans une cocotte, chauffez l’huile de coco et faites-y revenir l’oignon, l’ail et le gingembre hachés. Ajoutez 10 cl d’eau et la pâte de curry, et poursuivez la cuisson à feu moyen 2 minutes tout en remuant. Versez 50 cl d’eau, remuez, portez à ébullition et laissez mijoter 10 minutes."),
+(6, 3, "Pendant ce temps, faites cuire les nouilles de riz comme indiqué sur le paquet."),
+(6, 4, "Dans le bouillon, ajoutez le lait de coco, la citronnelle et la sauce nuoc-mâm et portez de nouveau à ébullition. Ajoutez les crevettes et poursuivez la cuisson 4 minutes."),
+(6, 5, "Répartissez les nouilles dans 4 bols et versez le bouillon. Garnissez de crevettes et parsemez de menthe et de basilic fraîchement ciselés. Servez bien chaud avec quelques quartiers de citron vert."),
+(7, 1, "Faites fondre les trois quarts des oignons et la roquette dans une casserole, à feu doux, dans l’huile d’olive pendant 3 minutes, en remuant régulièrement."),
+(7, 2, "Ajoutez les petits pois, le curry et le bouillon, salez, poivrez et laissez cuire une douzaine de minutes."),
+(7, 3, "Ajoutez la moitié des feuilles de menthe et mixez finement au robot plongeant."),
+(7, 4, "Versez dans des assiettes creuses, répartissez sur les soupes le saumon taillé en lanières ainsi que les oignons et les feuilles de menthe restants."),
+(8, 1, "Faites dorer l’oignon haché dans une poêle avec 1 filet d’huile d’olive et 1 pincée de sel pendant 5 à 7 minutes. Faites revenir l’ail hachée et l’origan 2 à 3 minutes, versez le vin blanc et laissez-le réduire 4 minutes."),
+(8, 2, "Ajoutez les tomates entières pelées avec leur jus en les malaxant bien avec les mains, parsemez de persil. Laissez mijoter 15 minutes environ."),
+(8, 3, "Versez le jus de palourde et 1,5 litre d’eau. Salez, poivrez et laissez cuire encore 15 minutes."),
+(8, 4, "Coupez le bar en petits morceaux, ajoutez-le à la soupe avec les tomates cerises préalablement lavées et les olives grossièrement hachées et laissez cuire à couvert pendant 5 minutes. Parsemez de coriandre, assaisonnez et servez aussitôt."),
+(9, 1, "Grattez et lavez soigneusement les moules."),
+(9, 2, "Dans une sauteuse, versez le vin blanc et faites-le chauffer. Ajoutez les moules et faites-les ouvrir à feu vif. Retirez-les à l’aide
+d’une écumoire et filtrez le jus de cuisson. Réservez-le. Décoquillez les moules en en conservant 12 (pour 4 personnes)  dans leur coquille."),
+(9, 3, "Retirez les premières feuilles du bulbe de fenouil et taillez-le en petits cubes. Pelez, épépinez et hachez la tomate. Épluchez et ciselez finement l’oignon."),
+(9, 4, "Dans une cocotte, faites revenir dans l’huile d’olive les cubes de fenouil, la tomate hachée et l’oignon ciselé. Versez le jus de cuisson des moules et 75 cl d’eau. Portez à ébullition. "),
+(9, 5, "Ajoutez les vermicelles et les pistils de safran, faites-les cuire le temps indiqué sur le paquet. Puis, 2 minutes avant la fin de la cuisson, ajoutez les
+moules. Goûtez et rectifiez l’assaisonnement."),
+(9, 6, "Servez aussitôt dans des assiettes creuses."),
+(10, 1, "Pelez et émincez l’oignon. Pelez, dégermez et émincez l’ail."),
+(10, 2, "Versez l’huile dans une casserole et faites-y revenir l’oignon et l’ail émincés, 5 minutes à feu moyen, en remuant régulièrement."),
+(10, 3, "Ajoutez les tomates pelées , copées en morceaux et 20 cl d’eau, salez, poivrez et laissez cuire 5 minutes, puis mixez."),
+(10, 4, "Versez dans une autre casserole 40 cl d’eau, le gingembre, le piment, le safran et les feuilles de laurier et laissez cuire 5 minutes à feu moyen."),
+(10, 5, "Ajoutez le poisson coupé en morceaux et poursuivez la cuisson 5 minutes."),
+(10, 6, "Versez alors le tout dans la première casserole, ajoutez le crabe et laissez cuire encore 5 minutes."),
+(10, 7, "Versez dans des assiettes creuses et parsemez de persil."),
+(11, 1, "Épluchez les pommes de terre et les carottes, et taillez-les en cubes de 1 cm d’épaisseur. Rincez et émincez le poireau. Lavez la branche de céleri, taillez-la en rondelles et ciselez les feuilles. Épluchez et ciselez l’oignon."),
+(11, 2, "Portez le bouillon à ébullition avec les légumes, la feuille de laurier et les grains de poivre. Couvrez et laissez cuire à frémissement pendant 20 minutes."),
+(11, 3, "Pendant ce temps, détaillez le saumon en cubes de 4 cm de côté. Rincez, séchez et ciselez l’aneth."),
+(11, 4, "Dans le bouillon, ajoutez les cubes de saumon et la crème liquide et poursuivez la cuisson 5 minutes."),
+(11, 5, "Au moment de servir, parsemez de feuilles de céleri et d’aneth ciselé et accompagnez la soupe de tartines de pain de seigle."),
+
+
+(12, 1, "Faites tremper les champignons noirs séchés dans un bol d’eau tiède pendant 30 minutes, puis taillez-les en morceaux. Nettoyez et émincez les shiitakés. Épluchez et taillez la carotte en julienne. Pelez et hachez l’oignon et sa tige. Coupez le tofu en cubes de 1 cm. Dans un bol, délayez la fécule de maïs avec 10 cl d’eau. Battez l’oeuf en omelette."),
+(12, 2, "Dans un wok (ou une sauteuse), chauffez l’huile et faites-y sauter l’oignon, les champignons noirs, les shiitakés et les pousses de bambou. Ajoutez la sauce soja, le sucre et la carotte, puis poursuivez la cuisson 2 minutes. Versez le bouillon et portez à ébullition. Versez la fécule délayée et faites épaissir sans cesser de remuer."),
+(12, 3, "Baissez le feu. Versez l’oeuf battu, le vinaigre de riz, les dés de tofu et le poivre blanc. Mélangez doucement et servez aussitôt parsemé de coriandre et de ciboulette fraîchement ciselées."),
+
+
+(13, 1, "Épluchez les carottes et les pommes de terre puis taillez-les en morceaux. Rincez le blanc de poireau rapidement sous un filet d’eau. Retirez les radicelles. Émincez le blanc finement. Épluchez les échalotes puis émincez-les finement. Coupez les cornichons en morceaux de taille moyenne."),
+(13, 2, "Faites revenir le blanc de poireau, les échalotes et le paprika dans une cocotte avec l’huile d’olive. Ajoutez les carottes et les pommes de terre ainsi que le bouquet garni. Salez et poivrez. Mouillez avec le bouillon de légumes. Ajoutez ensuite l’orge perlé, les morceaux de cornichon et le persil effeuillé."),
+(13, 3, "Faites cuire 45 minutes à feu moyen et presque à couvert (laissez juste une toute petite ouverture)."),
+(13, 4, "Retirez le bouquet garni. Ajoutez le jus de saumure des cornichons. Mélangez et servez aussitôt (en ajoutant un peu d’eau si la soupe vous semble trop épaisse)."),
+
+
+
+(14, 1, "Épluchez le gingembre et les carottes, nettoyez le poireau, puis coupez-les en gros tronçons. Épluchez les gousses d’ail. Coupez le céleri en gros morceaux. Dans une grande casserole, versez 1,5 litre d’eau. Ajoutez la sauce soja, les morceaux de gingembre, de carottes, de poireau, de céleri, les gousses d’ail, les grains de poivre et les graines de coriandre. Laissez mijoter à couvert sur feu moyen pendant 2 heures."),
+(14, 2, "Nettoyez et émincez finement les champignons. Émincez finement les ciboules. Coupez le tofu en petits cubes. Réservez."),
+(14, 3, "Filtrez le bouillon, puis portez-le à ébullition et faites-y cuire les vermicelles de riz et les champignons pendant 15 minutes."),
+(14, 4, "Répartissez le bouillon, les vermicelles et les champignons entre 4 bols et ajoutez les cubes de tofu et les ciboules émincées. Servez aussitôt."),
+
+
+
+(15, 1, "Écossez les haricots frais. Équeutez et coupez les haricots verts en tronçons de 2 cm. Épluchez les carottes et les pommes de terre et coupez-les en petits dés de 0,5 cm ainsi que les courgettes. Lavez et coupez en rondelles les branches de céleri. Pelez, épépinez et hachez les tomates. Épluchez et ciselez l’oignon."),
+(15, 2, "Dans une cocotte ou un faitout, faites revenir à feu doux l’oignon avec l’huile d’olive. Ajoutez tous les légumes coupés en petits dés et les haricots frais. Versez le bouillon. Portez à ébullition, couvrez et laissez cuire à frémissement pendant 30 minutes. Ajoutez les pâtes et poursuivez la cuisson le temps indiqué sur le paquet. Goûtez et rectifiez l’assaisonnement."),
+(15, 3, "Servez aussitôt parsemé de basilic fraîchement ciselé et de 1 filet d’huile d’olive."),
+
+
+(16, 1, "Rincez les lentilles sous l’eau froide. Épluchez et coupez en rondelles les carottes. Pelez et ciselez l’oignon. Pelez, dégermez et hachez les gousses d’ail. Pelez et coupez en tout petits morceaux le gingembre."),
+(16, 2, "Dans une cocotte, faites chauffer l’huile et ajoutez-y l’oignon, l’ail, le gingembre et les graines de cumin. Faites revenir, le temps que l’oignon devienne translucide. Ajoutez le curry et le curcuma et mélangez. Versez 1,5 litre d’eau, les carottes, la pulpe de tomates et les lentilles. Portez à ébullition et poursuivez la cuisson 40 minutes à couvert et à frémissement."),
+(16, 3, "À l’aide d’un mixeur plongeant ou d’un blender, mixez la soupe en ajoutant au besoin un peu d’eau en fonction de la consistance désirée. Goûtez et rectifiez l’assaisonnement."),
+(16, 4, "Servez la soupe parsemée de quelques feuilles de coriandre, saupoudrée de curry et accompagnée de naans."),
+
+
+
+(17, 1, "Faites revenir les oignons pendant 5 minutes dans une casserole à feu moyen, avec l’huile d’olive, en remuant régulièrement."),
+(17, 2, "Ajoutez le quinoa, mélangez, puis versez le bouillon et laissez cuire le temps indiqué sur l’emballage : comptez 10 à 15 minutes."),
+(17, 3, "Cinq minutes avant la fin de la cuisson du quinoa, ajoutez tous les légumes, le curcuma et la moitié du basilic grossièment hachés. Salez et poivrez à votre goût."),
+(17, 4, "Servez la soupe dans des bols ou des assiettes creuses, parsemez le basilic restant et versez 1 trait d’huile d’olive."),
+
+
+
+(18, 1, "Épluchez la courge, les navets et les pommes de terre et taillezles en cubes de 1 cm. Lavez les blettes, puis émincez finement les côtes et les feuilles au couteau."),
+(18, 2, "Dans un faitout, chauffez l’huile d’olive et laissez-y suer les cubes de courge, de navets et de pommes de terre. Ajoutez le lait et 75 cl d’eau. Salez. Portez à ébullition et laissez frémir pendant 15 minutes. Ajoutez les blettes émincées et les vermicelles et poursuivez la cuisson 10 minutes."),
+(18, 3, "Servez bien chaud, parsemé de basilic ciselé."),
+
+
+
+(19, 1, "Dans une casserole, chauffez l’huile d’olive et laissez revenir l’oignon coupé en dés et le thym 5 minutes à feu moyen, en remuant régulièrement."),
+(19, 2, "Ajoutez les pommes de terre coupées en cubes et les choux de Bruxelles coupés en deux et prolongez la cuisson de 5 minutes à couvert, salez et poivrez."),
+(19, 3, "Ajoutez les marrons cuits au naturel, le bouillon et laissez cuire 12 minutes de plus."),
+(19, 4, "Ajoutez le fromage frais dans la casserole et passez le tout au mixeur plongeant (/conservez quelques marrons et choux de Bruxelles pour la présentation finale)/"),
+(19, 5, "Servez dans des assiettes creuses, répartissez les marrons et les choux de Bruxelles réservés, puis parsemez de noisettes concassées et décorez de 1 trait de crème."),
+
+
+
+(20, 1, "Mettez l’orge mondé à tremper pendant 12 heures. Au bout de ce temps, égouttez-le et faites-le cuire dans un grand volume d’eau froide non salée 30 minutes à compter de l’ébullition. Filtrez en récupérant 1 litre d’eau de cuisson."),
+(20, 2, "Pelez et ciselez finement les oignons. Effeuillez et ciselez la menthe et émincez la tige d’oignon nouveau."),
+(20, 3, "Dans une cocotte, faites revenir à l’huile d’olive les oignons ciselés pendant quelques minutes. Ajoutez l’orge cuit, les pois chiches et l’eau de cuisson, puis faites chauffer à feu moyen."),
+(20, 4, "Dans un saladier, mélangez le yaourt avec les oeufs. Versez dessus une louche d’eau de cuisson de la soupe et mélangez. Renouvelez l’opération deux fois, puis versez ce mélange dans la soupe. Faites chauffer en remuant le temps que la soupe arrive à frémissement."),
+(20, 5, "Parsemez de menthe ciselée et d’oignon nouveau émincé et servez aussitôt."),
+
+
+
+(21, 1, "Rincez abondamment les graines de quinoa à l’eau froide."),
+(21, 2, "Rincez les poivrons, retirez le pédoncule, les graines et les membranes blanches, puis taillez-les en petits cubes. Coupez les épis de maïs en tronçons de 2 à 3 cm. Épluchez et ciselez finement l’oignon. Pelez, dégermez et hachez les gousses d’ail."),
+(21, 3, "Dans une cocotte, chauffez l’huile et faites-y revenir 5 minutes les vdés de poivrons, l’ail et l’oignon. Ajoutez le quinoa rincé, les tronçons de maïs et le bouillon. Portez à ébullition, couvrez et faites cuire à petit frémissement 10 minutes. Ajoutez les haricots rouges et continuez la cuisson 10 minutes. Goûtez, rectifiez l’assaisonnement : salez, poivrez ou pimentez."),
+(21, 4, "Servez bien chaud."),
+
+
+
+(22, 1, "Écossez les petits pois. Pelez les carottes et coupez-les en rondelles. Lavez les asperges, retirez la partie dure de la base et coupez le reste en rondelles de 1 à 2 cm en conservant les pointes. Ciselez les oignons et 10 cm de leur tige. Pelez la tête d’ail, retirez les gousses et émincez-les finement."),
+(22, 2, "Dans un faitout, faites suer quelques minutes les oignons et l’ail avec l’huile. Versez le bouillon et portez à ébullition. Ajoutez les légumes et poursuivez la cuisson 10 minutes. Goûtez et rectifiez l’assaisonnement."),
+(22, 3, "Pendant ce temps, faites cuire les nouilles soba comme indiqué sur le paquet. Égouttez-les et répartissez-les dans 4 bols."),
+(22, 4, "Versez aussitôt le bouillon aux légumes, parsemez d’estragon fraîchement ciselé et arrosez de 1 filet d’huile d’olive."),
+
+
+
+(23, 1, "Pelez et hachez l’oignon. Émincez le jambon en lamelles."), 
+(23, 2, "Faiteschauffer l’huile dans une cocotte. Ajoutez l’oignon haché, le jambon, puis la julienne surgelée. Mélangez et laissez dorer 5 minutes à feu vif."),
+(23, 3, "Versez le bouillon. Poivrez. Portez à ébullition. Ajoutez les pâtes et laissez cuire 10 minutes à feu vif."),
+(23, 4, "Pendant la cuisson de la soupe, pelez, dégermez et hachez l’ail, rincez le basilic et détachez les feuilles."),
+(23, 5, "Ajoutez-les dans la soupe au moment de servir. Parsemez de parmesan et servez bien chaud."),
+(24, 1, "Taillez la viande en cubes de 3 cm. Épluchez et râpez à la grille àgros trous les betteraves et la carotte."),
+(24, 2, "Pelez la pomme de terre et coupez-la en dés."),
+(24, 3, "Retirez les premières feuilles du chou rouge si elles sont abîmées, ôtez le coeur et taillez le reste en fines lanières."),
+(24, 4, "Épluchez et émincez l’oignon."),
+(24, 5, "Dans une cocotte, chauffez l’huile et faites revenir la viande et l’oignon. Ajoutez les betteraves et la carotte râpées, les dés de pomme de terre, le bouillon, la feuille de laurier, le concentré de tomates et le vinaigre. Portez à ébullition, puis faites cuire à couvert et à frémissement pendant 30 minutes. l’assaisonnement."),
+(24, 6, "Ajoutez le chou émincé et poursuivez la cuisson 15 minutes. Goûtez et rectifiez"),
+(24, 7, "Servez le bortsch accompagné de crème, d’aneth ciselé et de tranches de pain de seigle."),
+(25, 1, "Versez 1 litre d’eau dans une cocotte. Ajoutez les lentilles vertes, du sel, du poivre, le thym et le laurier. Couvrez, laissez mijoter 15 minutes à partir de l’ébullition."),
+(25, 2, "Pelez et lavez les carottes et l’oignon. Coupez-les en dés, ajoutezles dans la cocotte. Couvrez et faites cuire 20 minutes."),
+(25, 3, "Faites dorer les noisettes 3 minutes dans une poêle antiadhésive, laissez tiédir, puis hachez-les grossièrement. Émincez finement le jambon, faites-le griller quelques instants dans une poêle très chaude, sans matière grasse. Rincez et effeuillez le persil, puis hachez-le."),
+(25, 4, "Mixez la soupe après avoir retiré le thym et le laurier. Ajoutez du sel, le jambon et l’huile d’olive. Répartissez dans 4 bols ou assiettes creuses, saupoudrez de noisettes et de persil haché, et servez bien chaud."),
+(26, 1, "Préchauffez le four en position gril à 240 °C (th. 8)."),
+(26, 2, "Épluchez les oignons et coupez-les en deux. Nettoyez les shiitakés en retirant les pieds. Pelez les carottes et coupez-les en rondelles. Lavez le poireau et émincez-le. Épluchez et coupez en lamelles le gingembre."),
+(26, 3, "Faites rôtir 5 à 10 minutes les oignons sous le gril."),
+(26, 4, "Dans une cocotte chaude, faites torréfier les épices (cannelle, cardamome, anis étoilé, girofle, coriandre et poivre), sans cesser de remuer, jusqu’à ce que les parfums se développent. Versez le bouillon et ajoutez les oignons grillés, la sauce soja et le sucre, les légumes, le gingembre, les chapeaux de shiitakés, le laurier, le thym et le persil. Portez à ébullition et poursuivez la cuisson à frémissement pendant 30 minutes."),
+(26, 5, "Pendant ce temps, préparez la garniture. Faites cuire les nouilles de riz comme indiqué sur le paquet. Coupez le boeuf en fines tranches. Rincez et effeuillez les herbes fraîches. Coupez la ciboule en fines rondelles. Coupez le citron vert en quartiers."),
+(26, 6, "Garnissez 4 grands bols avec les nouilles, les lamelles de viande et quelques pousses de soja. Ajoutez le bouillon bien chaud et servez. Chacun pourra ensuite garnir son phô d’herbes et de ciboule, de jus de citron et de graines de sésame."),
+(27, 1, "Versez l’huile dans une sauteuse et faites revenir l’oignon haché finement, le céleri coupées en fines tranches, l’ail écrasée et le laurier 5 minutes à feu moyen en remuant régulièrement."),
+(27, 2, "Ajoutez la viande en petits cubes  et faites-la colorer 3 minutes en remuant."),
+(27, 3, "Incorporez le bouillon, les pommes de terre , les carottes et les navets coupées en petits cubes salez, poivrez et faites cuire l’ensemble pendant 20 minutes."),
+(27, 4, "Versez dans des bols, saupoudrez de persil et servez aussitôt."),
+(28, 1, "Pelez et lavez les carottes et l’oignon. Rincez la courgette. Coupez les légumes en dés."),
+(28, 2, "Portez à ébullition de l'eau avec du poivre. Ajoutez les légumes et les fèves. Couvrez et laissez cuire 20 minutes."),
+(28, 3, "Émincez les tranches de bacon en fines lamelles. Faites-les revenir dans l’huile d’olive, avec les feuilles de sauge coupées en deux, à feu vif pour les rendre croustillantes."),
+(28, 4, "Mixez la soupe, versez dans les bols ou assiettes creuses, ajoutez le bacon et la sauge, un peu de piment si vous le souhaitez et servez aussitôt."),
+(29, 1, "Placez les haricots noirs dans un grand bol avec de l’eau et laissez tremper 1 nuit au réfrigérateur."),
+(29, 2, "Égouttez-les, puis faites-les cuire 1 heure 15 à 1 heure 30 dans de l’eau non salée avec les échalotes, préalablement épluchées et hachées, et le cumin. Égouttez."),
+(29, 3, "Portez le bouillon à ébullition. Lavez et coupez les tomates en dés, ajoutez-les dans le bouillon avec les haricots, les jeunes pousses d’épinard lavées et le jambon blanc coupé en petits morceaux. Donnez un tour de moulin à poivre et servez."),
+(30, 1, "Épluchez les pommes de terre et taillez-les en morceaux. Rincez le blanc de poireau et la branche de céleri. Retirez les radicelles à l’extrémité du poireau et émincez-le finement. Coupez le céleri en tronçons. Épluchez puis coupez les carottes en dés. Rincez le poivron, épépinez-le puis coupez-le en dés. Épluchez les échalotes puis émincez-les finement. Épluchez les gousses d’ail, retirez le germe et écrasez-les. Coupez le poulet en cubes. Réservez-les avec 1/3 des carottes et du poivron."),
+(30, 2, "Faites revenir le poireau, les échalotes, l’ail et le curry dans une cocotte avec 1 filet d’huile d’olive. Ajoutez les pommes de terre, les carottes, le poivron, le céleri et le bouquet garni. Salez et poivrez. Mouillez avec le bouillon de volaille. Faites cuire 45 minutes à feu moyen et presque à couvert."),
+(30, 3, "Retirez le bouquet garni. Mixez la préparation. Ajoutez le lait de coco, les pâtes, puis le blanc de poulet, la carotte et le poivron réservés. Laissez cuire à nouveau 10 minutes à feu moyen et à couvert."),
+(30, 4, "Si la soupe vous semble trop liquide, n’hésitez pas à la faire réduire quelques minutes supplémentaires à feu moyen et à découvert. À l’inverse, si elle vous semble trop épaisse, ajoutez un peu d’eau."),
+(31, 1, "La veille, faites tremper les pois chiches dans un grand volumed’eau."),
+(31, 2, "Le jour même, égouttez les pois chiches. Coupez l’agneau en petits dés. Épluchez et émincez les oignons. Rincez, séchez, effeuillez et ciselez la coriandre et le persil."),
+(31, 3, "Dans une cocotte, versez l’huile. Ajoutez la viande, les oignons, la coriandre et le persil ciselés, les pois chiches et les lentilles préalablement rincées sous l’eau froide, la pulpe de tomates et les épices. Salez, poivrez et mélangez bien. Versez 1,75 litre d’eau, remuez et portez à ébullition. Poursuivez la cuisson à feu doux et à couvert en mélangeant de temps en temps jusqu’à ce que les pois chiches et la viande soient bien cuits."),
+(31, 4, "Pendant ce temps, diluez la farine avec 30 cl d’eau. Hors du feu, versez ce mélange dans la soupe tout en remuant. Remettez à cuire à feu doux pendant une dizaine de minutes en remuant égulièrement : la soupe épaissit."),
+(31, 5, "Servez la harira chaude parsemée de quelques feuilles de coriandre et de quartiers de citron."),
+(32, 1, "Coupez les cuisses de poulet en deux."),
+(32, 2, "Portez le bouillon à ébullition dans une casserole. Ajoutez le poulet et la feuille de laurier, couvrez et faites cuire à frémissement pendant 30 minutes."),
+(32, 3, "Pendant ce temps, rincez, épluchez et émincez les poireaux. Épluchez et taillez en petits cubes la carotte. Dénoyautez et coupez les pruneaux en quatre."),
+(32, 4, "Retirez les cuisses de poulet du bouillon, ôtez la peau et détachez la chair en morceaux."),
+(32, 5, "Ajoutez dans le bouillon les poireaux émincés, les petits cubes de carottes et les pruneaux et poursuivez la cuisson 15 minutes. Goûtez et rectifiez l’assaisonnement."),
+(32, 6, "Répartissez les morceaux de poulet dans 4 bols, puis ajoutez les légumes et les pruneaux et arrosez de bouillon.");
 
 -- crée les requetes sql pour les recherches sur le site.
 
 select name,id form soup where name= %$laRecherche%;
 
-creation de la base de donnée user 
+
+
+-- creation de la base de donnée user 
 
 
 CREATE DATABASE user_my_soup;
@@ -233,3 +435,5 @@ values
 ("thollas", "olivier", "o_thollas@hotmail.com", "1984-02-17"),
 ("thollas", "fabien", "f_thollas@hotmail.com", "1986-06-24"),
 ("katono", "fuyumi", "katonofuyumi@hotmail.fr", "1991-11-18");
+
+

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $dns = 'mysql:host=localhost;dbname=mysoupe';
 $bd = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 $query = $bd->query('SELECT * FROM soup');
@@ -23,6 +25,12 @@ function imgRand()
       }
    }
 }
+
+if(isset($_SESSION["existUser"])){
+   echo $_SESSION["existUser"]["nom"];
+   echo $_SESSION["existUser"]["prenom"];
+}
+
 
 
 ?>

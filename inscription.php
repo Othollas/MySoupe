@@ -28,6 +28,9 @@ if (!empty($_POST)) {
         // je decide ce que je fais 
     }
 }
+
+
+
 include "./template/header.php"
 ?>
 

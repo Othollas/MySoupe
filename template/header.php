@@ -57,9 +57,9 @@ if (isset($valider) && !empty(trim($keywords))) {
                 <h1><a href="index.php">MySoupe</a></h1>
             </div>
             
-            <?php if(isset($_SESSION)){?>
+            <?php if(isset($_SESSION["existUser"])){?>
                 <div class="existUser">
-                    <p>Bienvenue : <b><?=  $_SESSION["existUser"]["prenom"] . " " .  $_SESSION["existUser"]["nom"] ?></b> <a class="connect" href="<?php session_destroy() ?>">deconnexion</a></p>
+                    <p>Bienvenue : <b><?=  $_SESSION["existUser"]["prenom"] . " " .  $_SESSION["existUser"]["nom"] ?></b> <a class="connect" href="./deconnexion.php">deconnexion</a></p>
                 </div>
                 <?php }else{?>
                 <div class="connect">
@@ -84,8 +84,9 @@ if (isset($valider) && !empty(trim($keywords))) {
             </form>
 
             <ul>
-               <?php if(isset($_SESSION)){?>
+               <?php if(isset($_SESSION["existUser"]) && ($_SESSION["existUser"]["est_admin"] == true)){?>
                     <li><a href="add_soupe.php">Ajouter une recette </a></li>
+                    <li><a href="addIngredient.php">Ajouter un ingredient </a></li>
                 <?php } ?>
                 
                 <li><a href="ingredient.php">Ingredients</a></li>

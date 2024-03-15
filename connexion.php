@@ -1,4 +1,5 @@
 <?php
+
 // on verifie si le formulaire à bien été posté.
 if (!empty($_POST)) {
     // on verifie que les champs sont envoyé et qu'il ne sont pas vide
@@ -26,21 +27,24 @@ if (!empty($_POST)) {
             die("Le password et/ou le mot de passe n'existe pas <br> appui <a href='./connexion.php'>ici</a> pour retourner à la page inscription");
         }
 
-        session_start();
+        echo $existUser[0]["est_admin"];
     
+        session_start();
 
-        $_SESSION["existUser"] = [
-            "id" => $existUser[0]["id"],
-            "prenom" => $existUser[0]["prenom"],
-            "nom" => $existUser[0]["nom"],
-            "email" => $existUser[0]["email"]
-        ];
-
+        
+        header("Location: profil.php");
     }
+    $_SESSION["existUser"] = [
+        "id" => $existUser[0]["id"],
+        "prenom" => $existUser[0]["prenom"],
+        "nom" => $existUser[0]["nom"],
+        "email" => $existUser[0]["email"],
+        "est_admin" => $existUser[0]["est_admin"]
+    ];
 }
 
-
-
+if(isset($_SESSION)){echo $_SESSION["existUser"]["nom"];
+    echo $_SESSION["existUser"]["prenom"];}
 
 
 
@@ -49,7 +53,7 @@ include './template/header.php'
 ?>
 
 <div id="form_connect">
-    <form method="POST">
+    <form method="post"  enctype="multipart/form-data" >
         <div id="connect_user_exist">
             <div id="gafam">
                 <div id="facebook">
