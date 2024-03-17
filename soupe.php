@@ -58,7 +58,7 @@ if ($find == true) { ?>
         <div id="soupePresentation">
 
 
-            <img src="./img/recipes/<?= $data["picture"] ?>" alt="">
+            <img src="test_img.php?id=<?= $_GET["id"] ?>" alt="">
 
 
             <div class="data">

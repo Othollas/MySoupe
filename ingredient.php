@@ -3,7 +3,7 @@ session_start();
 
 include './connexionBDD.php';
 
-$req = $pdo->prepare("select id from ingredient ");
+$req = $pdo->prepare("select id from ingredient");
 $req->setFetchMode(PDO::FETCH_ASSOC);
 $req->execute();
 $resultReq = $req->fetchAll();
@@ -16,7 +16,7 @@ $nbr_de_pages_ingredient = ceil($count / $nbr_elements_par_page_ingredient);
 $debut_page_ingredient = ($page_ingredient - 1) * $nbr_elements_par_page_ingredient;
 
 
-$query = $pdo->query("SELECT * FROM ingredient limit $debut_page_ingredient, $nbr_elements_par_page_ingredient");
+$query = $pdo->query("SELECT * FROM ingredient order by name limit $debut_page_ingredient, $nbr_elements_par_page_ingredient");
 $ingredients = $query->fetchAll(PDO::FETCH_ASSOC);
 if (count($ingredients) == 0)
     header("location:./ingredient.php");
