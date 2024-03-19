@@ -24,7 +24,9 @@
         </div>
     </section>
 </footer>
+
 </main>
 </body>
-<script type="module" src="./js/script.js"></script>
+<script src="./js/index.js"></script>
+
 </html>

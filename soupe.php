@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 
     if (isset($_GET['id'])) {
         $ingredient = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE));
-        $query = $ingredient->prepare('SELECT id_ingredient FROM soup_ingredient WHERE id_soup = :id');
+        $query = $ingredient->prepare('SELECT id_ingredient, mesure FROM soup_ingredient WHERE id_soup = :id');
         $query->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
         $query->execute();
         $soup_ingredient = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -26,19 +26,18 @@ if (isset($_GET['id'])) {
 
     if (isset($_GET['id'])) {
         $db_ingredient = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE));
-        $query_ingredient = $db_ingredient->prepare('SELECT id,name,picture FROM ingredient');
+        $query_ingredient = $db_ingredient->prepare('SELECT id,name,picture,unit FROM ingredient');
         $query_ingredient->execute();
         $soup_ingredients = $query_ingredient->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $db_etape = new PDO($dns, 'root', '', array(PDO::ATTR_ERRMODE));
     $query_etape = $db_etape->prepare('SELECT id_soup,n_etape,etape FROM soup_etape WHERE id_soup = :id');
     $query_etape->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
     $query_etape->execute();
     $etapes = $query_etape->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($etapes);
 }
 
 
@@ -69,38 +68,41 @@ if ($find == true) { ?>
         </div>
 
 
-        <div id="prepare_ingredient">
 
+        <div id="prepare_ingredient">
+            <div id="text">
+                <p><?= $data["texte"] ?></p>
+            </div>
             <div class="preparation">
 
                 <p>
-                    <img src="./src/sablier.png" alt=""><?= $data['prepare_time'] +
-                                                            $data['cook_time'] . " Mn : "  ?> <img src="./src/ingredient.png" alt=""> <?= $data['prepare_time'] . " + " ?> <img src="./src/cuisson.png" alt=""> <?= $data['cook_time'] ?>
+                    <img src="./src/sablier.png" alt=""><?= $data['prepare_time'] + $data['cook_time'] . " Mn : "  ?> <img src="./src/ingredient.png" alt=""> <?= $data['prepare_time'] . " + " ?> <img src="./src/cuisson.png" alt=""> <?= $data['cook_time'] ?>
                 </p>
             </div>
 
             <div class="ingredient">
                 <h2>Ingredient</h2>
-                <div>
-                    <ul>
+                <ul>
+                    <div class="flex_ingredient">
+
                         <?php foreach ($soup_ingredient as $ingredient) {
                             foreach ($soup_ingredients as $ingredients) {
 
                                 if ($ingredient["id_ingredient"] == $ingredients["id"]) {
-                                    echo "<li>$ingredients[name]</li>";
+                                    echo  "<li>" . $ingredient["mesure"] . " " .  ($ingredients["unit"] >= "1" && ($ingredients["unit"] == "gr" || $ingredients["unit"] == "pièce") ? $ingredients["unit"] . "s" : $ingredients["unit"]) . " : " . $ingredients["name"] . "</li>";
                                 };
                             }
                         } ?>
-
-                    </ul>
-                </div>
+                    </div>
+                </ul>
             </div>
 
-<div id="etape">
-   <?php  foreach($etapes as $etape){?>
-    <p><?= $etape["n_etape"] . "." . $etape["etape"]; ?></p>
-   <?php } ?>
-</div>
+            <div id="etape">
+                <?php foreach ($etapes as $etape) { ?>
+                    <p><?= $etape["n_etape"] . "." . $etape["etape"]; ?></p>
+                    <hr>
+                <?php } ?>
+            </div>
 
 
         </div>
@@ -115,12 +117,10 @@ if ($find == true) { ?>
 <a href="index.php">retour</a>
 
 
-<?php 
+<?php
 $chaine = "Dans une cocotte ou un faitout, faites suer dans l’huile les rondelles de poireau et l’oignon émincé. Ajoutez les pommes de terre, 75 cl d’eau de cuisson du haddock avec le laurier et le lait, et portez à ébullition. Faites cuire à frémissement pendant 20 minutes : les pommes de terre doivent être très tendres. Pendant ce temps, ôtez la peau et les arêtes du haddock et effeuillez-le.";
 echo strlen($chaine);
 
 ?>
 
 <?php include 'template/footer.php' ?>
-
-

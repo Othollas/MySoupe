@@ -39,7 +39,7 @@ if(isset($_SESSION["existUser"])){
 
 <section id="presentation">
    <div id="imgSlide">
-      <img src="https://media.istockphoto.com/id/1197494143/fr/photo/hommes-mangeant-la-soupe-cr%C3%A9meuse-de-citrouille-r%C3%B4tie-v%C3%A9g%C3%A9talienne.jpg?s=1024x1024&w=is&k=20&c=kyKvNUbT_LruWtkaHAwWP90EvSs47rKjvz4-ctgmojY=" alt="">
+      <img class="turn" src="https://media.istockphoto.com/id/1197494143/fr/photo/hommes-mangeant-la-soupe-cr%C3%A9meuse-de-citrouille-r%C3%B4tie-v%C3%A9g%C3%A9talienne.jpg?s=1024x1024&w=is&k=20&c=kyKvNUbT_LruWtkaHAwWP90EvSs47rKjvz4-ctgmojY=" alt="">
    </div>
    <div class="presentation">
       <h1>RECETTE DE SOUPE</h1>
