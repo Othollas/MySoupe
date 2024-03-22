@@ -25,14 +25,6 @@ function imgRand()
       }
    }
 }
-
-if(isset($_SESSION["existUser"])){
-   echo $_SESSION["existUser"]["nom"];
-   echo $_SESSION["existUser"]["prenom"];
-}
-
-
-
 ?>
 
 
@@ -55,8 +47,8 @@ if(isset($_SESSION["existUser"])){
       <a href="./recettes.php">Voir les recettes</a>
    </div>
    <div class="randomRecette">
-      <?php 
-      $photo1 = imgRand(); 
+      <?php
+      $photo1 = imgRand();
       $photo2 = imgRand();
       $photo3 = imgRand();
       ?>
@@ -65,35 +57,35 @@ if(isset($_SESSION["existUser"])){
          <a href="soupe.php?id=<?= $photo1['id'] ?>"><img src="./img/recipes/<?= $photo1["picture"] ?>" alt=""></a>
          <p><?= $photo1["name"] ?></p>
       </div>
-         
+
       <div class="positionImg">
-            <?php $photo2 = imgRand() ?>
-            <a href="soupe.php?id=<?= $photo2['id'] ?>"><img src="./img/recipes/<?= $photo2["picture"] ?>" alt=""></a>
-            <p><?= $photo2["name"] ?></p>
-         </div>
+         <?php $photo2 = imgRand() ?>
+         <a href="soupe.php?id=<?= $photo2['id'] ?>"><img src="./img/recipes/<?= $photo2["picture"] ?>" alt=""></a>
+         <p><?= $photo2["name"] ?></p>
+      </div>
 
-         <div class="positionImg">
-               <?php $photo1 = imgRand() ?>
-               <a href="soupe.php?id=<?= $photo3['id'] ?>"><img src="./img/recipes/<?= $photo3["picture"] ?>" alt=""></a>
-               <p><?= $photo3["name"] ?></p>
-            </div>
+      <div class="positionImg">
+         <?php $photo1 = imgRand() ?>
+         <a href="soupe.php?id=<?= $photo3['id'] ?>"><img src="./img/recipes/<?= $photo3["picture"] ?>" alt=""></a>
+         <p><?= $photo3["name"] ?></p>
+      </div>
 
-         </div>
+   </div>
 </section>
 
 <section id="top4">
-<?php 
-      $top4_img1 = imgRand(); 
-      $top4_img2 = imgRand();
-      $top4_img3 = imgRand();
-      $top4_img4 = imgRand();
-      ?>
+   <?php
+   $top4_img1 = imgRand();
+   $top4_img2 = imgRand();
+   $top4_img3 = imgRand();
+   $top4_img4 = imgRand();
+   ?>
    <div id="top4">
       <h2>Retrouvez les soupes les plus recentes</h2>
    </div>
 
    <div id="imgTop4">
-   <div class="positionImg">
+      <div class="positionImg">
          <a href="soupe.php?id=<?= $top4_img1['id'] ?>"><img src="./img/recipes/<?= $top4_img1["picture"] ?>" alt=""></a>
          <p><?= $top4_img1["name"] ?></p>
       </div>

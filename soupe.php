@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $find = false;
 $data = array("nom" => "Soupe introuvable");
 if (isset($_GET['id'])) {
@@ -53,7 +54,6 @@ include 'template/header.php';
 if ($find == true) { ?>
     <h1 style="font-size:40px; text-align:center; margin:50px 0"><?= $data['name'] ?></h1>
     <div id="soupe">
-
         <div id="soupePresentation">
 
 
@@ -112,8 +112,56 @@ if ($find == true) { ?>
         <h1>Soupe introuvable</h1>
     </div>
 <?php } ?>
+<?php if ($find == true) { ?>
+    <div>
+        <h2>laisser un commentaire</h2>
+        <hr>
+        <form action="./commentaire.php" method="post">
+            <?php
+            if (isset($_SESSION["existUser"])) {
+                $_SESSION["comment"]["id_soup"] = $_GET["id"];
+                $_SESSION["comment"]["id_user"] = $_SESSION["existUser"]["id"];
+            }
+            ?>
+            <div class="textarea">
+                <textarea name="text" id="textComment" cols="30" rows="10"></textarea>
+                <?php if (isset($_SESSION["erreur"])) {
+                    echo $_SESSION["erreur"];
+                    unset($_SESSION["erreur"]);
+                } ?>
+            </div>
+            <input type="submit" value="envoyer">
+        </form>
+    </div>
+    <?php
 
+    ?>
 
+    <section id="comment">
+                <h2>super commentaire de personnes super genial</h2>
+        <?php
+        include "./connexionComment.php";
+        foreach ($comment_users as $user) {
+            foreach ($comments as $comment) {
+                if ($comment["id_soup"] == $_GET["id"]) {
+                    if ($comment["id_user"] == $user["id"]) { ?>
+                        <div class="commentaire">
+                            <div class="identity_time">
+                                <p><?= $user["nom"] . " " . $user["prenom"]  ?></p>
+                                <p><?= $comment["date_comment"] ?></p>
+                            </div>
+                            <hr>
+                            <p class="comment"><?= $comment["text_comment"] ?></p>
+                        </div>
+
+        <?php }
+                }
+            }
+        }
+        ?>
+    </section>
+
+<?php }  ?>
 <a href="index.php">retour</a>
 
 

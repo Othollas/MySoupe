@@ -9,11 +9,12 @@ if (!empty($_POST)) {
             die("le format de l'email n'est pas valide");
         }
         // je me connecte à la base de donnée.
-        include_once "./connexionUser.php";
-
-        $sql = "SELECT * FROM userTest WHERE email = :email";
+        include "./connexionUser.php";
+        $token = bin2hex(random_bytes(32));
+        $sql = "SELECT * FROM userTest WHERE email = :email AND mot_de_passe = :mdp ";
         $query = $user->prepare($sql);
         $query->bindParam(":email", $_POST["email"], PDO::PARAM_STR);
+        $query->bindParam(":mdp", $_POST["password"], PDO::PARAM_STR);
         $query->execute();
         $existUser = $query->fetchAll();
 
@@ -22,13 +23,21 @@ if (!empty($_POST)) {
         }
 
         // ici on sait que l'on a un user existant, nous devons maintenant verifier le mot de passe
-
+        
         if (!($_POST["password"] == $existUser[0]["mot_de_passe"])) {
             die("Le password et/ou le mot de passe n'existe pas <br> appui <a href='./connexion.php'>ici</a> pour retourner à la page inscription");
         }
-
-        echo $existUser[0]["est_admin"];
+        
+        
+        $mdp = $_POST["password"];
+        $email = $_POST["email"];
+        $user->exec("UPDATE userTest SET token  = '$token' WHERE email = '$email' and mot_de_passe = '$mdp'");
+        setcookie("token", $token, time() + 3600);
+        
     
+
+        
+        
         session_start();
 
         
@@ -76,7 +85,7 @@ include './template/header.php'
                     </div>
 
                     <div>
-                        <a href="">mot de passe oublié ? </a>
+                        <a href="./recup_mot_de_passe.php">mot de passe oublié ? </a>
                     </div>
 
                 </div>

@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+echo "$_COOKIE[token]";
 
 include_once "./template/header.php";
 
